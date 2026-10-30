@@ -19,7 +19,7 @@ export default function FeaturedVehicles({ vehicles }: FeaturedVehiclesProps) {
               Veículos em destaque
             </h2>
             <p className="featured__subtitle">
-              Uma seleção demonstrativa de modelos do nosso catálogo.
+              Uma seleção de modelos do nosso catálogo.
             </p>
           </div>
 

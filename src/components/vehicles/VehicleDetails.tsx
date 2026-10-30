@@ -50,7 +50,6 @@ export default function VehicleDetails() {
             src={vehicle.image}
             alt={`${vehicle.brand} ${vehicle.model}`}
           />
-          <span className="details-demo-badge">Veículo demonstrativo</span>
         </div>
 
         <div className="vehicle-details-info">
@@ -59,7 +58,6 @@ export default function VehicleDetails() {
           <p className="details-version">{vehicle.version}</p>
 
           <div className="details-price">
-            <span>Preço demonstrativo</span>
             <strong>{formatPrice(vehicle.price)}</strong>
           </div>
 
@@ -93,7 +91,7 @@ export default function VehicleDetails() {
             <ShieldCheck size={20} />
             <p>
               Consulte as condições e informações do veículo antes de qualquer
-              negociação. Os dados desta demonstração são fictícios.
+              negociação.
             </p>
           </div>
 

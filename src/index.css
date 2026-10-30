@@ -3,27 +3,39 @@
 }
 
 :root {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
   color: #f7f7f7;
-  background: #151515;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  --color-background: #151515;
   --color-surface: #1e1e1e;
   --color-primary: #e51f2b;
   --color-primary-hover: #c91925;
   --color-text: #f7f7f7;
   --color-text-muted: #a9a9a9;
-  --color-border: rgba(255, 255, 255, 0.14);
 }
 
 html {
   min-width: 320px;
   scroll-behavior: smooth;
   background: var(--color-background);
+  min-height: 100%;
+}
+
+body {
+   min-height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh; /* acompanha a barra do navegador no celular */
+}
+
+#root > main {
+  flex: 1;
 }
 
 body {
@@ -39,7 +51,7 @@ button,
 input,
 select,
 textarea {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 button,
@@ -72,10 +84,6 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
-#root {
-  min-height: 100vh;
-}
-
 /* Páginas internas */
 
 .page-content {
@@ -103,13 +111,6 @@ textarea:focus-visible {
   width: 100%;
   margin: 0;
   padding: 76px 0 84px;
-  background:
-    radial-gradient(
-      ellipse at 50% 0%,
-      rgba(229, 31, 43, 0.055),
-      transparent 55%
-    ),
-    var(--color-background);
   color: var(--color-text);
 }
 

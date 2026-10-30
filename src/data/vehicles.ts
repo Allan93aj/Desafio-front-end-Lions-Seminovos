@@ -112,7 +112,7 @@ export const vehicles: Vehicle[] = [
     category: "sedan",
     transmission: "Automático",
     fuel: "Flex",
-    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("civic"),
   },
   {
     id: 8,
@@ -125,7 +125,7 @@ export const vehicles: Vehicle[] = [
     category: "sedan",
     transmission: "Automático",
     fuel: "Flex",
-    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("versa"),
   },
   {
     id: 9,
@@ -138,7 +138,7 @@ export const vehicles: Vehicle[] = [
     category: "suv",
     transmission: "Automático",
     fuel: "Flex",
-    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("tcross"),
   },
   {
     id: 10,
@@ -151,7 +151,7 @@ export const vehicles: Vehicle[] = [
     category: "suv",
     transmission: "Automático",
     fuel: "Flex",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("compass"),
   },
   {
     id: 11,
@@ -164,7 +164,7 @@ export const vehicles: Vehicle[] = [
     category: "suv",
     transmission: "Automático",
     fuel: "Flex",
-    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("creta"),
   },
   {
     id: 12,
@@ -177,7 +177,7 @@ export const vehicles: Vehicle[] = [
     category: "suv",
     transmission: "Automático",
     fuel: "Flex",
-    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=85",
+     image: getVehicleImage("hrv"),
   },
   {
     id: 13,
@@ -190,7 +190,7 @@ export const vehicles: Vehicle[] = [
     category: "picape",
     transmission: "Automático",
     fuel: "Diesel",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=85",
+     image: getVehicleImage("hilux"),
   },
   {
     id: 14,
@@ -203,7 +203,7 @@ export const vehicles: Vehicle[] = [
     category: "picape",
     transmission: "Automático",
     fuel: "Diesel",
-    image: "https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=85",
+     image: getVehicleImage("s10"),
   },
   {
     id: 15,
@@ -216,7 +216,7 @@ export const vehicles: Vehicle[] = [
     category: "picape",
     transmission: "Manual",
     fuel: "Flex",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=85",
+     image: getVehicleImage("strada"),
   },
   {
     id: 16,
@@ -229,7 +229,7 @@ export const vehicles: Vehicle[] = [
     category: "picape",
     transmission: "Automático",
     fuel: "Diesel",
-    image: "https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=85",
+     image: getVehicleImage("ranger"),
   },
   {
     id: 17,
@@ -242,7 +242,7 @@ export const vehicles: Vehicle[] = [
     category: "utilitarios",
     transmission: "Manual",
     fuel: "Flex",
-    image: "https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("fiorino"),
   },
   {
     id: 18,
@@ -255,7 +255,7 @@ export const vehicles: Vehicle[] = [
     category: "utilitarios",
     transmission: "Manual",
     fuel: "Flex",
-    image: "https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("kangoo"),
   },
   {
     id: 19,
@@ -268,7 +268,7 @@ export const vehicles: Vehicle[] = [
     category: "utilitarios",
     transmission: "Manual",
     fuel: "Diesel",
-    image: "https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("sprinter"),
   },
   {
     id: 20,
@@ -281,7 +281,7 @@ export const vehicles: Vehicle[] = [
     category: "utilitarios",
     transmission: "Manual",
     fuel: "Diesel",
-    image: "https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("ducato"),
   },
   {
     id: 21,
@@ -294,7 +294,7 @@ export const vehicles: Vehicle[] = [
     category: "motos",
     transmission: "Manual",
     fuel: "Gasolina",
-    image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("cg160")
   },
   {
     id: 22,
@@ -307,7 +307,7 @@ export const vehicles: Vehicle[] = [
     category: "motos",
     transmission: "Manual",
     fuel: "Gasolina",
-    image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("fazer")
   },
   {
     id: 23,
@@ -320,7 +320,7 @@ export const vehicles: Vehicle[] = [
     category: "motos",
     transmission: "Manual",
     fuel: "Gasolina",
-    image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("cb500")
   },
   {
     id: 24,
@@ -333,6 +333,6 @@ export const vehicles: Vehicle[] = [
     category: "motos",
     transmission: "Automático",
     fuel: "Gasolina",
-    image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85",
+    image: getVehicleImage("nmax")
   },
 ];

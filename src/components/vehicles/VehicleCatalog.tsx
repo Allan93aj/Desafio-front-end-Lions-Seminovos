@@ -1,7 +1,6 @@
-
 import { useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Search, SlidersHorizontal, ArrowUpDown } from "lucide-react";
+import { Search, SlidersHorizontal, ArrowUpDown, X } from "lucide-react";
 import { vehicles } from "../../data/vehicles";
 import { VehicleCard } from "./VehicleCard";
 import "./VehicleCatalog.css";
@@ -24,6 +23,7 @@ export function VehicleCatalog() {
   const [selectedBrand, setSelectedBrand] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [sortBy, setSortBy] = useState("recommended");
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const brands = useMemo(
     () => [...new Set(vehicles.map((vehicle) => vehicle.brand))].sort(),
@@ -48,9 +48,9 @@ export function VehicleCatalog() {
 
         return (
           matchesCategory &&
-  matchesSearch &&
-  matchesBrand &&
-  matchesPrice
+          matchesSearch &&
+          matchesBrand &&
+          matchesPrice
         );
       })
       .sort((a, b) => {
@@ -74,7 +74,6 @@ export function VehicleCatalog() {
     setSortBy("recommended");
     setSearchParams({});
   }
-
 
   return (
     <main className="catalog-page">
@@ -107,26 +106,51 @@ export function VehicleCatalog() {
               : "veículos encontrados"}
           </div>
 
-          <label className="catalog-sort">
-            <ArrowUpDown size={17} aria-hidden="true" />
-            <span>Ordenar por</span>
-            <select
-              value={sortBy}
-              onChange={(event) => setSortBy(event.target.value)}
+          <div className="catalog-toolbar-right">
+            <button
+              type="button"
+              className="catalog-filter-toggle-btn"
+              onClick={() => setIsFilterOpen(true)}
             >
-              <option value="recommended">Recomendados</option>
-              <option value="price-asc">Menor preço</option>
-              <option value="price-desc">Maior preço</option>
-              <option value="year-desc">Ano mais recente</option>
-            </select>
-          </label>
+              <SlidersHorizontal size={16} />
+              <span>Filtrar</span>
+            </button>
+
+            <div className="catalog-sort">
+              <ArrowUpDown size={17} aria-hidden="true" />
+              <select
+                value={sortBy}
+                onChange={(event) => setSortBy(event.target.value)}
+              >
+                <option value="recommended">Recomendados</option>
+                <option value="price-asc">Menor preço</option>
+                <option value="price-desc">Maior preço</option>
+                <option value="year-desc">Ano mais recente</option>
+              </select>
+            </div>
+          </div>
         </div>
 
         <div className="catalog-layout">
-          <aside className="catalog-filters">
+          {/* Overlay para escurecer o fundo no mobile */}
+          <div 
+            className={`catalog-overlay ${isFilterOpen ? "active" : ""}`}
+            onClick={() => setIsFilterOpen(false)}
+          />
+
+          <aside className={`catalog-filters ${isFilterOpen ? "open" : ""}`}>
             <div className="catalog-filter-heading">
-              <SlidersHorizontal size={19} aria-hidden="true" />
-              <h2>Filtros</h2>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <SlidersHorizontal size={19} aria-hidden="true" />
+                <h2>Filtros</h2>
+              </div>
+              <button
+                type="button"
+                className="catalog-close-btn"
+                onClick={() => setIsFilterOpen(false)}
+              >
+                <X size={20} />
+              </button>
             </div>
 
             <div className="catalog-filter-group">
@@ -205,7 +229,10 @@ export function VehicleCatalog() {
             <button
               type="button"
               className="catalog-clear-button"
-              onClick={clearFilters}
+              onClick={() => {
+                clearFilters();
+                setIsFilterOpen(false);
+              }}
             >
               Limpar filtros
             </button>

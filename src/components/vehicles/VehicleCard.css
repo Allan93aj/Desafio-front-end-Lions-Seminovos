@@ -127,10 +127,19 @@ display: flex;
   background: #c92735;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .vehicle-card-content {
-    padding: 14px;
+    display: grid;
+        grid-template-rows: 15px 50px 20px 60px;
+        padding: 10px;
   }
+
+  .vehicle-card-title {
+          margin: 6px 0;
+        color: #242424;
+        font-size: 14px;
+        line-height: normal;
+}
 
   .vehicle-card-price {
     font-size: 1rem;

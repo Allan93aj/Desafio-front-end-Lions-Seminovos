@@ -1,6 +1,6 @@
 .appointment-page {
-  width: min(100% - 40px, 900px);
-  margin: 56px auto 80px;
+  width: min(100% - 40px, 600px);
+  margin: 120px auto 80px;
 }
 
 .appointment-heading {
@@ -26,19 +26,19 @@
 }
 
 .appointment-form {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 22px;
   padding: 30px;
   border: 1px solid #e8e8e8;
   border-radius: 16px;
   background: #fff;
   box-shadow: 0 12px 35px rgb(0 0 0 / 5%);
+  justify-content: center;
 }
 
 .appointment-field {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   gap: 8px;
 }
 
@@ -90,7 +90,7 @@
 .appointment-disclaimer {
   grid-column: 1 / -1;
   margin: -8px 0 0;
-  color: #777;
+  color: #ccc;
   font-size: 0.8rem;
   line-height: 1.5;
   text-align: center;
@@ -98,8 +98,13 @@
 
 .appointment-success {
   width: min(100% - 40px, 600px);
-  margin: 90px auto;
+  margin: 120px auto;
   text-align: center;
+  height: 68.5vh;
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .appointment-success > svg {

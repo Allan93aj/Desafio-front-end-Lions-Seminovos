@@ -325,7 +325,7 @@
 
   .catalog-toolbar {
     align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row;
     gap: 16px;
   }
 
@@ -381,11 +381,128 @@
   }
 
   .catalog-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
   .catalog-results {
     font-size: 0.88rem;
+  }
+}
+
+/* Botão de abrir filtro (escondido por padrão no desktop) */
+.catalog-filter-toggle-btn {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  background: #101010;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.catalog-close-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #101010;
+  cursor: pointer;
+}
+
+.catalog-overlay {
+  display: none;
+}
+
+.catalog-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Responsividade Mobile / Tablet */
+@media (max-width: 760px) {
+  .catalog-filter-toggle-btn {
+    display: inline-flex;
+  }
+
+  .catalog-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Transforma a sidebar numa gaveta lateral (Drawer) */
+  .catalog-filters {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 340px;
+    height: 100vh;
+    z-index: 1100;
+    background: #fff;
+    overflow-y: auto;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    transition: right 0.3s ease-in-out;
+    padding: 24px;
+  }
+
+  .catalog-filters.open {
+    right: 0;
+  }
+
+  /* Overlay de fundo */
+  .catalog-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .catalog-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .catalog-filter-heading {
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+
+  .catalog-toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .catalog-sort {
+    width: auto;
+  }
+
+  .catalog-sort span {
+    display: none; /* Esconde o texto "Ordenar por" para poupar espaço no telemóvel */
+  }
+
+  .catalog-sort select {
+    min-width: 130px;
+    width: auto;
+  }
+
+  .catalog-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 }

@@ -67,9 +67,6 @@ export function WhyChooseUs() {
                     <Icon size={23} strokeWidth={1.8} />
                   </span>
 
-                  <span className="benefit-card__number">
-                    0{index + 1}
-                  </span>
                 </div>
 
                 <h3>{benefit.title}</h3>
