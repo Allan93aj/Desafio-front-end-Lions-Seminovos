@@ -1,3 +1,4 @@
+
 import {
   CarFront,
   ClipboardCheck,
@@ -57,7 +58,7 @@ export function WhyChooseUs() {
         </header>
 
         <div className="why-choose-us__grid">
-          {benefits.map((benefit, index) => {
+          {benefits.map((benefit) => {
             const Icon = benefit.icon
 
             return (
@@ -66,7 +67,6 @@ export function WhyChooseUs() {
                   <span className="benefit-card__icon">
                     <Icon size={23} strokeWidth={1.8} />
                   </span>
-
                 </div>
 
                 <h3>{benefit.title}</h3>
