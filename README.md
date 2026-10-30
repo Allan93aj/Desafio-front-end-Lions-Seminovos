@@ -87,33 +87,43 @@ Durante a implementação, foram adotadas as seguintes decisões:
 - **Testes automatizados:** utilização de Vitest e React Testing Library para validar elementos da aplicação e comportamentos do formulário.
 - **Escopo do desafio:** priorização das páginas solicitadas pela Lions Seminovos, sem implementar funcionalidades de backend que não eram necessárias para a avaliação.
 
-## Como executar o projeto
+## Como acessar o projeto
 
-### Pré-requisitos
+Você pode acessar a aplicação de duas maneiras:
+
+### Opção 1 — Acessar online pela Vercel
+
+Acesse o projeto diretamente pelo navegador, sem precisar instalar nada:
+
+**[Acessar Lions Seminovos — Projeto publicado](https://desafio-front-end-lions-seminovos-gray.vercel.app/)**
+
+### Opção 2 — Executar o projeto localmente
+
+#### Pré-requisitos
 
 - Node.js instalado.
 - npm instalado.
 - Git instalado, caso deseje clonar o repositório.
 
-### 1. Clone o repositório
+#### 1. Clone o repositório
 
 ```bash
 git clone https://github.com/Allan93aj/Desafio-front-end-Lions-Seminovos.git
 ```
 
-### 2. Acesse a pasta do projeto
+#### 2. Acesse a pasta do projeto
 
 ```bash
 cd Desafio-front-end-Lions-Seminovos
 ```
 
-### 3. Instale as dependências
+#### 3. Instale as dependências
 
 ```bash
 npm install
 ```
 
-### 4. Execute em ambiente de desenvolvimento
+#### 4. Execute o projeto em ambiente de desenvolvimento
 
 ```bash
 npm run dev
@@ -125,7 +135,7 @@ O Vite exibirá no terminal o endereço local da aplicação, normalmente:
 http://localhost:5173/
 ```
 
-Abra o endereço indicado no navegador.
+Abra o endereço indicado no navegador para visualizar o projeto.
 
 ## Build de produção
 
