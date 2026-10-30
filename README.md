@@ -98,10 +98,8 @@ Durante a implementação, foram adotadas as seguintes decisões:
 ### 1. Clone o repositório
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/Allan93aj/Desafio-front-end-Lions-Seminovos.git
 ```
-
-Substitua `URL_DO_REPOSITORIO` pela URL HTTPS do repositório no GitHub.
 
 ### 2. Acesse a pasta do projeto
 
