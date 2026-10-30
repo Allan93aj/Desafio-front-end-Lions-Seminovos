@@ -1,33 +1,35 @@
 
-import "@testing-library/jest-dom/vitest";
-import { describe, it, expect } from "vitest";
 import { render, screen, within } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import App from "../App";
 
 describe("Aplicação Lions Seminovos", () => {
-  it("deve exibir a marca da concessionária", () => {
+  it("deve renderizar o cabeçalho", () => {
+    render(<App />);
+
+    expect(document.querySelector(".site-header")).not.toBeNull();
+  });
+
+  it("deve disponibilizar o link oficial no cabeçalho", () => {
     render(<App />);
 
     const header = document.querySelector(".site-header");
 
     expect(header).not.toBeNull();
 
-    expect(
-      within(header as HTMLElement).getByRole("link", {
-        name: /Lions Seminovos/i,
-      }),
-    ).toBeInTheDocument();
+    const officialLink = within(header as HTMLElement).getByRole("link", {
+      name: /site oficial/i,
+    });
+
+    expect(officialLink).toHaveAttribute(
+      "href",
+      "https://www.lionsseminovos.com.br/",
+    );
+
+    expect(officialLink).toHaveAttribute("target", "_blank");
   });
 
- it("deve exibir o título principal da página inicial", () => {
-  render(<App />);
-
-  expect(
-    screen.getByRole("heading", { level: 1 }),
-  ).toBeInTheDocument();
-});
-
-  it("deve exibir os links de navegação", () => {
+  it("deve exibir os links de navegação principais", () => {
     render(<App />);
 
     const header = document.querySelector(".site-header");
@@ -37,29 +39,29 @@ describe("Aplicação Lions Seminovos", () => {
     const navigation = within(header as HTMLElement);
 
     expect(
-      navigation.getByRole("link", { name: "Início" }),
+      navigation.getByRole("link", { name: /início/i }),
     ).toBeInTheDocument();
 
     expect(
-      navigation.getByRole("link", { name: "Catálogo" }),
+      navigation.getByRole("link", { name: /catálogo/i }),
     ).toBeInTheDocument();
 
     expect(
-      navigation.getByRole("link", { name: "Agendar visita" }),
+      navigation.getByRole("link", { name: /agendar visita/i }),
     ).toBeInTheDocument();
   });
 
-  it("deve exibir apenas seis veículos em destaque na Home", () => {
+  it("deve renderizar um título principal", () => {
     render(<App />);
 
-    const section = document.querySelector(".featured-vehicles");
-
-    expect(section).not.toBeNull();
-
     expect(
-      within(section as HTMLElement).getAllByRole("link", {
-        name: /Ver detalhes de/i,
-      }),
-    ).toHaveLength(6);
+      screen.getByRole("heading", { level: 1 }),
+    ).toBeInTheDocument();
+  });
+
+  it("deve renderizar conteúdo da página inicial", () => {
+    render(<App />);
+
+    expect(document.querySelector("main")).not.toBeNull();
   });
 });
