@@ -1,8 +1,9 @@
 
 .site-header {
   width: 100%;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  background: #1c1c1c;
+  position: fixed;
+    z-index: 1;
 }
 
 .header-container {

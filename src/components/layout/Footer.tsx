@@ -23,7 +23,7 @@ export default function Footer() {
           <nav className="site-footer__nav" aria-label="Navegação do rodapé">
             <Link to="/">Página inicial</Link>
             <Link to="/catalogo">Catálogo</Link>
-            <Link to="/agendar-visita">Agendar uma visita</Link>
+            <Link to="/agende-uma-visita">Agendar uma visita</Link>
             <a
               href="https://www.lionsseminovos.com.br/"
               target="_blank"

@@ -21,7 +21,7 @@ describe('Formulário de agendamento', () => {
 
   it('deve selecionar o veículo informado na URL', () => {
     render(
-      <MemoryRouter initialEntries={['/agendar-visita?veiculo=1']}>
+      <MemoryRouter initialEntries={['/agende-uma-visita?veiculo=1']}>
         <AppointmentForm />
       </MemoryRouter>,
     )

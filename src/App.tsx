@@ -1,19 +1,29 @@
-
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 
 import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 import { Hero } from "./components/home/Hero";
 import { VehicleCategories } from "./components/home/VehicleCategories";
-import VehicleCard from "./components/home/VehicleCard";
-import { vehicles } from "./data/vehicles";
+import { WhyChooseUs } from "./components/home/WhyChooseUs";
+import FeaturedVehicles from "./components/home/FeaturedVehicles";
 import { VehicleCatalog } from "./components/vehicles/VehicleCatalog";
 import VehicleDetails from "./components/vehicles/VehicleDetails";
 import AppointmentForm from "./components/appointments/AppointmentForm";
-import { WhyChooseUs } from "./components/home/WhyChooseUs";
-import Footer from "./components/layout/Footer";
+import { vehicles } from "./data/vehicles";
 
 import "./index.css";
+
+// Volta para o topo da página sempre que a rota muda.
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function Home() {
   // Exibe somente 6 veículos em destaque na página inicial.
@@ -22,52 +32,38 @@ function Home() {
   return (
     <>
       <Hero />
-
       <VehicleCategories />
-
-      <section className="featured-vehicles">
-        <div className="section-heading">
-          <div>
-            <span className="section-eyebrow">SELEÇÃO ESPECIAL</span>
-            <h2>Veículos em destaque</h2>
-            <p>
-              Encontre opções para acompanhar sua próxima conquista.
-            </p>
-          </div>
-
-          <Link to="/catalogo" className="view-all-link">
-            Ver catálogo completo
-            <ArrowRight size={17} />
-          </Link>
-        </div>
-
-        <div className="featured-vehicles-grid">
-          {featuredVehicles.map((vehicle) => (
-            <VehicleCard key={vehicle.id} vehicle={vehicle} />
-          ))}
-        </div>
-      </section>
-
+      <FeaturedVehicles vehicles={featuredVehicles} />
       <WhyChooseUs />
     </>
   );
 }
 
-function Catalog() {
-  return <VehicleCatalog />;
+function NotFound() {
+  return (
+    <section style={{ padding: "96px 24px", textAlign: "center" }}>
+      <h1>Página não encontrada</h1>
+      <p style={{ margin: "12px 0 24px" }}>
+        O endereço que você tentou acessar não existe.
+      </p>
+      <Link to="/">Voltar para a página inicial</Link>
+    </section>
+  );
 }
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
 
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/catalogo" element={<Catalog />} />
+          <Route path="/catalogo" element={<VehicleCatalog />} />
           <Route path="/veiculo/:id" element={<VehicleDetails />} />
-          <Route path="/agendar-visita" element={<AppointmentForm />} />
+          <Route path="/agende-uma-visita" element={<AppointmentForm />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
 

@@ -32,7 +32,7 @@ export function Hero() {
             </Link>
 
             <Link
-              to="/agendar-visita"
+              to="/agende-uma-visita"
               className="hero__button hero__button--secondary"
             >
               <CalendarDays size={17} aria-hidden="true" />

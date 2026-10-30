@@ -17,7 +17,7 @@ export default function Header() {
         <nav className="main-navigation" aria-label="Navegação principal">
           <NavLink to="/">Início</NavLink>
           <NavLink to="/catalogo">Catálogo</NavLink>
-          <NavLink to="/agendar-visita">Agendar visita</NavLink>
+          <NavLink to="/agende-uma-visita">Agendar visita</NavLink>
         </nav>
 
         <a

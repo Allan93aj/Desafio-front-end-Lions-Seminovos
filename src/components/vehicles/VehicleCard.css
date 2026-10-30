@@ -8,19 +8,14 @@ display: flex;
 }
 
 
-.vehicle-card {
-      min-width: 0;
-    overflow: hidden;
-    background: #171717;
-    border: 1px solid #303030;
-    border-radius: 12px;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-    width: 400px;
-}
 
 .vehicle-card:hover {
   transform: translateY(-4px);
   border-color: #e63946;
+}
+
+.vehicle-card{
+  border: 1px solid #ddd;
 }
 
 .vehicle-card-image-link {
@@ -74,7 +69,7 @@ display: flex;
 
 .vehicle-card-title {
   margin: 6px 0 16px;
-  color: #fff;
+  color: #242424;
   font-size: 1.1rem;
   line-height: 1.4;
 }
@@ -84,7 +79,7 @@ display: flex;
   flex-wrap: wrap;
   gap: 12px;
   padding-bottom: 16px;
-  color: #b5b5b5;
+  color: #242424;
   font-size: 0.8rem;
 }
 
@@ -106,12 +101,12 @@ display: flex;
 .vehicle-card-price-label {
   display: block;
   margin-bottom: 4px;
-  color: #a3a3a3;
+  color: #242424;
   font-size: 0.75rem;
 }
 
 .vehicle-card-price {
-  color: #fff;
+  color: #242424;
   font-size: 1.15rem;
 }
 

@@ -35,7 +35,7 @@ export default function VehicleDetails() {
     )
   }
 
-  const appointmentUrl = `/agendar-visita?veiculo=${vehicle.id}`
+  const appointmentUrl = `/agende-uma-visita?veiculo=${vehicle.id}`
 
   return (
     <section className="vehicle-details-page">

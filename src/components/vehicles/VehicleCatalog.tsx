@@ -75,13 +75,6 @@ export function VehicleCatalog() {
     setSearchParams({});
   }
 
-  function formatPrice(price: number) {
-    return price.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-      maximumFractionDigits: 0,
-    });
-  }
 
   return (
     <main className="catalog-page">

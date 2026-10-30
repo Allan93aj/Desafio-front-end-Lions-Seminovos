@@ -162,7 +162,7 @@
 
 @media (min-width: 1500px) {
   .hero {
-    min-height: 90vh;
+    min-height: 99vh;
   }
 }
 
@@ -213,7 +213,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    min-height: 540px;
+    min-height: 80vh;
   }
 
   .hero__container {
